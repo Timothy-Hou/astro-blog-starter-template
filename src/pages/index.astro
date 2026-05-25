@@ -26,18 +26,17 @@ import Footer from "../components/Footer.astro";
           <h1 class="hero-title reveal">
             Physician-scientist<br />
             in pediatrics, genetics,<br />
-            and human disease.
+            and cardiology.
           </h1>
 
           <p class="hero-subtitle reveal">
             Pediatric Resident at Boston Children’s Hospital / Harvard Medical School.
-            My work bridges pediatric genetics, metabolic disease, cancer genomics,
-            and genetic epidemiology.
+            My work bridges general pediatrics, cardiometabolic disease, and cancer genomics.
           </p>
 
           <div class="hero-actions reveal">
             <a class="button primary" href="/cv.pdf">View CV</a>
-            <a class="button secondary" href="mailto:your.email@example.com">Contact Me</a>
+            <a class="button secondary" href="mailto:med.houtian@gmail.com">Contact Me</a>
           </div>
         </div>
 
@@ -53,63 +52,15 @@ import Footer from "../components/Footer.astro";
         <div class="statement-wrap">
           <p class="big-line reveal">From clinical questions.</p>
           <p class="big-line reveal">To human genetics.</p>
-          <p class="big-line reveal muted">To better care for children and families.</p>
         </div>
       </section>
 
-      <!-- RESEARCH: HORIZONTAL APPLE-LIKE SCROLL -->
-      <section class="section horizontal-section">
-        <div class="sticky-wrap">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Research Focus</p>
-            <h2>Connecting medicine, genomics, and translational discovery.</h2>
-          </div>
-
-          <div class="card-track">
-            <article class="research-card">
-              <span>01</span>
-              <h3>Pediatric Genetics</h3>
-              <p>
-                Rare disease, metabolic disorders, genotype–phenotype correlation,
-                and translational applications of clinical genetics.
-              </p>
-            </article>
-
-            <article class="research-card">
-              <span>02</span>
-              <h3>Genetic Epidemiology</h3>
-              <p>
-                Polygenic risk scores, cardiometabolic outcomes, population biobanks,
-                and risk prediction across diverse cohorts.
-              </p>
-            </article>
-
-            <article class="research-card">
-              <span>03</span>
-              <h3>Cancer Genomics</h3>
-              <p>
-                Molecular pathology, glioma biology, renal cell carcinoma,
-                multi-omics integration, and tumor classification.
-              </p>
-            </article>
-
-            <article class="research-card">
-              <span>04</span>
-              <h3>Metabolic Disease</h3>
-              <p>
-                Diabetes, lipid metabolism, inherited metabolic disease,
-                and the genetic basis of cardiometabolic risk.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <!-- PUBLICATIONS -->
       <section class="section publications-section">
         <div class="section-heading narrow reveal">
           <p class="eyebrow">Selected Publications</p>
-          <h2>Work across genetics, oncology, metabolism, and population health.</h2>
+          <h2>Work across genetic cardiology, oncology, and population health.</h2>
           <p>
             Selected research published in journals including Nature Communications,
             Diabetes Care, Lancet Regional Health, and other peer-reviewed journals.
@@ -163,8 +114,8 @@ import Footer from "../components/Footer.astro";
         <div class="contact-content reveal">
           <p class="eyebrow">Contact</p>
           <h2>For collaboration, mentorship, or academic inquiries.</h2>
-          <a class="email-link" href="mailto:your.email@example.com">
-            your.email@example.com
+          <a class="email-link" href="mailto:med.houtian@gmail.com">
+            med.houtian@gmail.com
           </a>
 
           <div class="social-links">
@@ -210,24 +161,6 @@ import Footer from "../components/Footer.astro";
             }
           );
         });
-
-        const track = document.querySelector(".card-track");
-
-        if (track) {
-          gsap.to(track, {
-            x: () => -(track.scrollWidth - window.innerWidth + 80),
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".horizontal-section",
-              start: "top top",
-              end: () => "+=" + Math.max(1200, track.scrollWidth),
-              scrub: 1,
-              pin: ".sticky-wrap",
-              anticipatePin: 1,
-              invalidateOnRefresh: true,
-            },
-          });
-        }
 
 
       }
