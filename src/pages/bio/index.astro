@@ -1,0 +1,137 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bio | Tianzhichao (Tim) Hou</title>
+    <meta
+      name="description"
+      content="Biography of Tianzhichao (Tim) Hou, MD, PhD."
+    />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="bio-page">
+      <section class="bio-hero">
+        <p class="eyebrow">Bio</p>
+        <h1>Tianzhichao (Tim) Hou, MD, PhD</h1>
+        <p class="lead">
+          Physician-scientist in pediatrics, human genetics, cardiometabolic disease,
+          and cancer genomics.
+        </p>
+      </section>
+
+      <section class="bio-content">
+        <h2>About</h2>
+        <p>
+          Tianzhichao (Tim) Hou, MD, PhD, is a physician-scientist and pediatric
+          resident at Boston Children’s Hospital / Harvard Medical School. His
+          academic interests lie at the intersection of pediatrics, human genetics,
+          cardiometabolic disease, and cancer genomics.
+        </p>
+
+        <h2>Training and Background</h2>
+        <p>
+          Tim completed his medical training at Zhejiang University and pursued
+          doctoral research in genetic epidemiology through Shanghai Jiao Tong
+          University and the University of Toronto. His research uses population-scale
+          genomic data, polygenic risk scores, Mendelian randomization, and multi-omics
+          approaches to understand human disease risk, prognosis, and translational
+          opportunities.
+        </p>
+
+        <h2>Research Focus</h2>
+        <p>
+          His work spans pediatric genetics, metabolic disease, cardiovascular risk,
+          and cancer genomics. He is particularly interested in how inherited genetic
+          variation can inform clinical risk prediction, disease classification, and
+          individualized care.
+        </p>
+
+        <h2>Long-term Vision</h2>
+        <p>
+          As a physician-scientist in training, Tim aims to bridge bedside observations
+          with genomic discovery, bringing human genetics closer to clinical
+          decision-making in pediatrics and translational medicine.
+        </p>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: #f5f5f7;
+    color: #111827;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+  .bio-page {
+    padding: 6rem 6vw;
+  }
+
+  .bio-hero {
+    max-width: 980px;
+    margin-bottom: 4rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: #0071e3;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .bio-hero h1 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .lead {
+    max-width: 760px;
+    margin-top: 1.6rem;
+    color: #6b7280;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.55;
+  }
+
+  .bio-content {
+    max-width: 900px;
+    padding: clamp(2rem, 5vw, 4rem);
+    border-radius: 36px;
+    background: white;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.06);
+  }
+
+  .bio-content h2 {
+    margin: 2rem 0 0.8rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
+  }
+
+  .bio-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .bio-content p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+</style>
