@@ -8,6 +8,7 @@ import Footer from "../components/Footer.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tianzhichao (Tim) Hou, MD, PhD</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta
       name="description"
       content="Tim Hou, MD, PhD — Pediatric resident at Boston Children’s Hospital / Harvard Medical School and physician-scientist in genetics, metabolism, and cancer genomics."
@@ -38,6 +39,22 @@ import Footer from "../components/Footer.astro";
             <a class="button primary" href="/cv.pdf">View CV</a>
             <a class="button secondary" href="mailto:med.houtian@gmail.com">Contact Me</a>
           </div>
+
+          <div class="affiliation-logos reveal">
+  <a href="https://www.childrenshospital.org/" target="_blank" rel="noopener noreferrer">
+    <img src="/logos/bch.png" alt="Boston Children’s Hospital" />
+  </a>
+
+  <a href="https://hms.harvard.edu/" target="_blank" rel="noopener noreferrer">
+    <img src="/logos/harvard.png" alt="Harvard Medical School" />
+  </a>
+
+<a href="https://www.bmc.org/" target="_blank" rel="noopener noreferrer">
+  <img class="bmc-logo" src="/logos/bmc.png" alt="Boston Medical Center" />
+</a>
+
+</div>
+
         </div>
 
         <div class="hero-visual reveal">
@@ -119,11 +136,11 @@ import Footer from "../components/Footer.astro";
           </a>
 
           <div class="social-links">
-            <a href="#">Google Scholar</a>
-            <a href="#">PubMed</a>
-            <a href="#">ORCID</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
+            <a href="https://scholar.google.ca/citations?user=QP1omegAAAAJ&hl=en">Google Scholar</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/?term=tianzhichao+hou">PubMed</a>
+            <a href="https://orcid.org/0000-0003-3937-351X">ORCID</a>
+            <a href="https://ca.linkedin.com/in/tianzhichao-hou-5473b11a2">LinkedIn</a>
+            <a href="https://www.uhncombiel.com/">Lab (COMBIEL)</a>
           </div>
         </div>
       </section>
@@ -254,6 +271,43 @@ import Footer from "../components/Footer.astro";
         gap: 1rem;
         margin-top: 2rem;
       }
+      .affiliation-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.affiliation-logos a {
+  display: inline-flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.affiliation-logos a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.affiliation-logos img {
+  max-height: 42px;
+  max-width: 220px;
+    width: auto;
+  object-fit: contain;
+  filter:none;
+}
+.affiliation-logos img.bmc-logo {
+  max-height: 56px;
+  max-width: 260px;
+}
+
+@media (max-width: 700px) {
+  .affiliation-logos {
+    gap: 1.2rem;
+  }
+}
 
       .button {
         display: inline-flex;
