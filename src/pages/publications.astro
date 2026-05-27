@@ -1,6 +1,400 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const publications = [
+  {
+    year: "2025",
+    authors: "Hou T, Sha Z, Wang Q, et al.",
+    title:
+      "Identifying PDAP1 as a Biological Target on Human Longevity: Integration of Mendelian Randomization, Cohort, and Cell Experiments Validation Study",
+    venue: "Aging Cell",
+    details: "24(7): e70065",
+    link: "https://doi.org/10.1111/acel.70065",
+  },
+
+  {
+    year: "2024",
+    authors: "Thakral A, Lee JJW, Hou T, et al.",
+    title:
+      "Smoking and alcohol by HPV status in head and neck cancer: a Mendelian randomization study",
+    venue: "Nature Communications",
+    details: "15(1): 7835",
+    link: "https://doi.org/10.1038/s41467-024-51679-x",
+  },
+  {
+    year: "2024",
+    authors: "Hou T, Li Y, Yan Q, et al.",
+    title:
+      "The interaction effect between BMI, diabetes and age at diabetes onset on the risk of thyroid cancer: A population-based cohort study in Shanghai, China",
+    venue: "Diabetes, Obesity and Metabolism",
+    details: "",
+    link: "https://doi.org/10.1111/dom.15746",
+  },
+  {
+    year: "2024",
+    authors: "Li M, Li J, Xu Y, et al.",
+    title:
+      "Effect of 5:2 Regimens: Energy-Restricted Diet or Low-Volume High-Intensity Interval Training Combined With Resistance Exercise on Glycemic Control and Cardiometabolic Health in Adults With Overweight/Obesity and Type 2 Diabetes: A Three-Arm Randomized Controlled Trial",
+    venue: "Diabetes Care",
+    details: "47(6): 1074–1083",
+    link: "https://doi.org/10.2337/dc24-0241",
+  },
+  {
+    year: "2024",
+    authors: "Li Y, Tian J, Hou T, et al.",
+    title:
+      "Association Between Age at Diabetes Diagnosis and Subsequent Incidence of Cancer: A Longitudinal Population-Based Cohort",
+    venue: "Diabetes Care",
+    details: "47(3): 353–361",
+    link: "https://doi.org/10.2337/dc23-0386",
+  },
+  {
+    year: "2024",
+    authors: "Hou T, Wang Q, Dai H, et al.",
+    title: "Interactive Association Between Gut Microbiota and Thyroid Cancer",
+    venue: "Endocrinology",
+    details: "165(1): bqad184",
+    link: "https://doi.org/10.1210/endocr/bqad184",
+  },
+  {
+    year: "2024",
+    authors: "Zhu Y, Wang Q, Dai H, Hou T, et al.",
+    title:
+      "Sex-specific causality of MRI-derived body compositions on glycaemic traits: Mendelian randomization and observational study",
+    venue: "Diabetes, Obesity and Metabolism",
+    details: "26(1): 373–384",
+    link: "https://doi.org/10.1111/dom.15326",
+  },
+  {
+    year: "2024",
+    authors: "Dai H, Hou T, Wang Q, et al.",
+    title:
+      "The effect of metformin on urate metabolism: findings from observational and Mendelian randomization analyses",
+    venue: "Diabetes, Obesity and Metabolism",
+    details: "26(1): 242–250",
+    link: "https://doi.org/10.1111/dom.15310",
+  },
+  {
+    year: "2024",
+    authors: "Huang J, Xu X, Zhou Y, et al.",
+    title:
+      "Age-specific difference in the temporal relationships between updated cardiovascular health construct and arterial stiffness in middle-aged and older adults",
+    venue: "GeroScience",
+    details: "46(2): 2051–2062",
+    link: "https://doi.org/10.1007/s11357-023-00965-5",
+  },
+  {
+    year: "2024",
+    authors: "Huang J, Xin Z, Cao Q, et al.",
+    title:
+      "Association between updated cardiovascular health construct and risks of non-alcoholic fatty liver disease",
+    venue: "Nutrition, Metabolism and Cardiovascular Diseases",
+    details: "34(2): 317–325",
+    link: "https://doi.org/10.1016/j.numecd.2023.09.018",
+  },
+  {
+    year: "2024",
+    authors: "Hou Y, Dai H, Chen N, Hou T, et al.",
+    title:
+      "Whole Blood-based Transcriptional Risk Score for Nonobese Type 2 Diabetes Predicts Dynamic Changes in Glucose Metabolism",
+    venue: "The Journal of Clinical Endocrinology & Metabolism",
+    details: "109(1): 114–124",
+    link: "https://doi.org/10.1210/clinem/dgad466",
+  },
+  {
+    year: "2023",
+    authors: "Sheng C-S, Wang H, Liu Y, Li Y, Hou T, et al.",
+    title:
+      "Long-term effects of blood pressure 130–139/80–89 mmHg on all-cause and cardiovascular mortality among Chinese adults with different glucose metabolism",
+    venue: "Cardiovascular Diabetology",
+    details: "22(1): 353",
+    link: "https://doi.org/10.1186/s12933-023-02088-9",
+  },
+  {
+    year: "2023",
+    authors: "Dai H, Hou T, Wang Q, et al.",
+    title:
+      "Roles of gut microbiota in atrial fibrillation: insights from Mendelian randomization analysis and genetic data from over 430,000 cohort study participants",
+    venue: "Cardiovascular Diabetology",
+    details: "22(1): 306",
+    link: "https://doi.org/10.1186/s12933-023-02045-6",
+  },
+  {
+    year: "2023",
+    authors: "Wang Q, Dai H, Hou T, et al.",
+    title:
+      "Dissecting causal relationships between gut microbiota, blood metabolites, and stroke: a Mendelian randomization study",
+    venue: "Journal of Stroke",
+    details: "25(3): 350–360",
+    link: "https://doi.org/10.5853/jos.2023.00381",
+  },
+  {
+    year: "2023",
+    authors: "Dai H, Zheng L, Zhu Z, Geng X, Hou T, et al.",
+    title:
+      "Evaluation of the Effect of Sodium-Glucose Cotransporter 2 Inhibition on Fracture Risk: Evidence From Mendelian Randomization and Genetic Association Study",
+    venue: "Journal of Bone and Mineral Research",
+    details: "38(11): 1645–1653",
+    link: "https://doi.org/10.1002/jbmr.4880",
+  },
+  {
+    year: "2023",
+    authors: "Xin Z, Huang J, Cao Q, et al.",
+    title:
+      "Risk of subclinical atherosclerosis across metabolic transition in individuals with or without fatty liver disease: a prospective cohort study",
+    venue: "Nutrition & Metabolism",
+    details: "20(1): 15",
+    link: "https://doi.org/10.1186/s12986-023-00734-3",
+  },
+  {
+    year: "2023",
+    authors: "Dai H, Hou T, Wang Q, et al.",
+    title:
+      "Causal relationships between the gut microbiome, blood lipids, and heart failure: a Mendelian randomization analysis",
+    venue: "European Journal of Preventive Cardiology",
+    details: "30(12): 1274–1282",
+    link: "https://doi.org/10.1093/eurjpc/zwad171",
+  },
+  {
+    year: "2023",
+    authors: "Hou T, Dai H, Wang Q, et al.",
+    title:
+      "Dissecting the causal effect between gut microbiota, DHA, and urate metabolism: a large-scale bidirectional Mendelian randomization",
+    venue: "Frontiers in Immunology",
+    details: "14: 1148591",
+    link: "https://doi.org/10.3389/fimmu.2023.1148591",
+  },
+  {
+    year: "2023",
+    authors: "Kong L, Ye C, Wang Y, Hou T, et al.",
+    title:
+      "Genetic evidence for causal effects of socioeconomic, lifestyle, and cardiometabolic factors on epigenetic-age acceleration",
+    venue: "The Journals of Gerontology: Series A",
+    details: "78(7): 1083–1091",
+    link: "https://doi.org/10.1093/gerona/glad078",
+  },
+  {
+    year: "2023",
+    authors: "Sha Z, Hou T, Zhou T, et al.",
+    title:
+      "Causal relationship between atrial fibrillation and leukocyte telomere length: A two sample, bidirectional Mendelian randomization study",
+    venue: "Frontiers in Cardiovascular Medicine",
+    details: "10: 1093255",
+    link: "https://doi.org/10.3389/fcvm.2023.1093255",
+  },
+  {
+    year: "2023",
+    authors: "Shen B, Li Y, Sheng C-S, Liu L, Hou T, et al.",
+    title:
+      "Association between age at diabetes onset or diabetes duration and subsequent risk of pancreatic cancer: results from a longitudinal cohort and mendelian randomization study",
+    venue: "The Lancet Regional Health–Western Pacific",
+    details: "30: 100596",
+    link: "https://doi.org/10.1016/j.lanwpc.2022.100596",
+  },
+  {
+    year: "2023",
+    authors: "Li Y, Hou T, Cheng M, et al.",
+    title:
+      "Anxiety prevalence and its association with physical activity in patients with non-communicable diseases during COVID-19 lockdown: a cross-sectional study in Shanghai, China",
+    venue: "BMC Public Health",
+    details: "23(1): 317",
+    link: "https://doi.org/10.1186/s12889-022-14369-1",
+  },
+  {
+    year: "2022",
+    authors: "Xu M, Zheng J, Hou T, et al.",
+    title:
+      "SGLT2 inhibition, choline metabolites, and cardiometabolic diseases: a mediation Mendelian randomization study",
+    venue: "Diabetes Care",
+    details: "45(11): 2718–2728",
+    link: "https://doi.org/10.2337/dc22-0323",
+  },
+  {
+    year: "2022",
+    authors: "Hou T, Li M, Lin H, et al.",
+    title:
+      "The causal effect of systolic blood pressure lowering on vascular outcomes in diabetes: a Mendelian randomization study",
+    venue: "The Journal of Clinical Endocrinology & Metabolism",
+    details: "107(9): 2616–2625",
+    link: "https://doi.org/10.1210/clinem/dgac354",
+  },
+  {
+    year: "2022",
+    authors: "Xin Z, Huang J, Cao Q, et al.",
+    title:
+      "Nonalcoholic fatty liver disease in relation to the remission and progression along the glycemic continuum",
+    venue: "Journal of Diabetes",
+    details: "14(9): 606–619",
+    link: "https://doi.org/10.1111/1753-0407.13314",
+  },
+  {
+    year: "2022",
+    authors: "Miao Y, Liu L, Hou T, et al.",
+    title: "Risk analysis of malignant tumor incidence in pre-diabetes patients in Shanghai",
+    venue: "Journal of Internal Medicine Concepts & Practice",
+    details: "17(06): 435–440",
+    link: "https://www.qk.sjtu.edu.cn/jimcp/CN/10.16138/j.1673-6087.2022.06.003",
+  },
+  {
+    year: "2022",
+    authors: "Ruan M, Hou T, Wang H, et al.",
+    title:
+      "Geometric deep learning and computational medicine research prospects of “preventing disease” in pre diabete",
+    venue: "Journal of Internal Medicine Concepts & Practice",
+    details: "17(06): 475–481",
+    link: "https://www.qk.sjtu.edu.cn/jimcp/EN/10.16138/j.1673-6087.2022.06.011",
+  },
+  {
+    year: "2021",
+    authors: "He R, Zheng R, Li J, Cao Q, Hou T, et al.",
+    title:
+      "Individual and combined associations of glucose metabolic components with cognitive function modified by obesity",
+    venue: "Frontiers in Endocrinology",
+    details: "12: 769120",
+    link: "https://doi.org/10.3389/fendo.2021.769120",
+  },
+];
+
+const presentations = [
+  {
+    year: "04/2025",
+    authors: "Hou T, Thakral A, Hueniken K, et al.",
+    title:
+      "Polygenic risk score-based smoking and drinking behaviors and head and neck squamous cell cancer risk by HPV status",
+    venue: "Cancer Research / AACR Annual Meeting",
+    details: "85(8_Supplement_1): 7399 · Poster · Chicago",
+    link:
+      "https://aacrjournals.org/cancerres/article/85/8_Supplement_1/7399/760049/Abstract-7399-Polygenic-risk-score-based-smoking",
+  },
+  {
+    year: "11/2024",
+    authors: "Sha Z, Hou T, et al.",
+    title:
+      "Plasma Protein-Based Prediction Model for Atrial Fibrillation Recurrence Post-Ablation: A Mendelian Randomization and Prospective Cohort Study",
+    venue: "American Heart Association Scientific Sessions",
+    details: "Poster · Chicago",
+  },
+  {
+    year: "06/2024",
+    authors: "Hou T, et al.",
+    title:
+      "The interaction effect between BMI, diabetes, and age at diabetes onset on the risk of thyroid cancer: a population-based cohort study",
+    venue: "ENDO 2024 / Endocrine Society Conference",
+    details: "Poster · Boston",
+  },
+  {
+    year: "05/2024",
+    authors: "Khan S, Jimenez B, Hueniken K, Hou T, et al.",
+    title:
+      "Novel genome-wide significant germline genetic variants associated with venous thrombo-embolism and arterial embolism risk in patients with ALK and ROS1 fusion non-small cell lung cancer",
+    venue: "Journal of Clinical Oncology / ASCO Annual Meeting",
+    details: "42(16_suppl): 12092 · Poster · Chicago",
+    link: "https://doi.org/10.1200/JCO.2024.42.16_suppl.12092",
+  },
+  {
+    year: "06/2023",
+    authors: "Tian J, Hou T, Chalmers J.",
+    title:
+      "Association between Age at Diabetes Onset and Subsequent Risk of Cancer",
+    venue: "Diabetes / ADA Scientific Sessions",
+    details: "72(Supplement_1): 186-LB · Poster · San Diego",
+    link:
+      "https://diabetesjournals.org/diabetes/article/72/Supplement_1/186-LB/149060/186-LB-Association-between-Age-at-Diabetes-Onset",
+  },
+];
+
+const scienceWriting = [
+  {
+    year: "12/2023",
+    titleEn: "Santa Missed Christmas — Was Diabetic Kidney Disease to Blame?",
+    titleZh: "圣诞老人今年没来发礼物，原因居然是……",
+    link: "https://mp.weixin.qq.com/s/BYuYeTY_uKB4p83xOhA2ow",
+    reading: ">199k",
+    repost: "2,997",
+    likes: "655",
+  },
+  {
+    year: "11/2023",
+    titleEn: "Tirzepatide: Why This New Diabetes Drug Became a Breakthrough",
+    reading: ">200k",
+    repost: "1,522",
+    likes: "223",
+  },
+  {
+    year: "07/2023",
+    titleEn: "The Collapse of Malaria Empire in China - after a 10,000-Year Battle",
+    titleZh: "这种疾病肆虐万年，每分钟杀死 1 个人，中国已率先将它消灭",
+    link: "https://mp.weixin.qq.com/s/DqCJbetarRUFOQarmt0XNg",
+    reading: ">202k",
+    repost: "3,374",
+    likes: "355",
+  },
+  {
+    year: "10/2021",
+    titleEn: "How Doctors Saved a Man Burned Over 90% of His Body?",
+    titleZh: "被 10 吨钢水浇穿，烧伤面积 90%，瑞金凭什么救活必死之人？",
+    link: "https://mp.weixin.qq.com/s/lFnB7z6qa0VKFYh-I1kdYA",
+    reading: ">570k",
+    repost: "11,036",
+    likes: "3,353",
+  },
+  {
+    year: "09/2021",
+    titleEn: "Turning Cafeterias Into Wards: The Race for Hospital Rankings in China",
+    titleZh: "我把食堂都改病房了，您看这床位数配评三甲吗？",
+    link: "https://mp.weixin.qq.com/s/HnscDd7Iw60sUZlxGBD41A?scene=1&click_id=2",
+    reading: ">144k",
+    repost: "1,314",
+    likes: "147",
+  },
+  {
+    year: "05/2021",
+    titleEn: "Japan’s Nuclear Wastewater Release: What Does It Mean for Human Health?",
+    titleZh: "日本正式宣布核废水入海，“处理过的水”对人体有害吗？",
+    link: "#",
+    reading: ">200k",
+    repost: "8,543",
+    likes: "773",
+  },
+  {
+    year: "05/2021",
+    titleEn:
+      "Shanghai’s 1988 Hepatitis A Outbreak: How One Shellfish Sparked a Public Health Crisis",
+    titleZh: "上海 30 万人暴发感染，这种海鲜至今被全面禁售",
+    link: "https://mp.weixin.qq.com/s/bJuNaqjVtohSmmS_H_qLvQ",
+    reading: "1 million",
+    repost: "10,057",
+    likes: "1,244",
+  },
+  {
+    year: "05/2021",
+    titleEn: "Why Don’t Public Hospitals in China Advertise?",
+    titleZh: "为啥中国公立医院不爱打广告？",
+    link: "https://mp.weixin.qq.com/s/wfoKCuhMByhtz4We5QSzZw",
+    reading: ">326k",
+    repost: "2,373",
+    likes: "375",
+  },
+  {
+    year: "04/2021",
+    titleEn: "Why Is China’s Maotai Distillery Building a Hospital?",
+    titleZh: "茅台也要办医院了？主任年薪 60 万 + 一套房，待遇直逼自家总经理",
+    link: "https://mp.weixin.qq.com/s/jOw032xv1iTy9NC70Qc_Zw",
+    reading: ">316k",
+    repost: "11,574",
+    likes: "205",
+  },
+  {
+    year: "04/2021",
+    titleEn: "Why Do Chinese Medical Schools Keep Adding Affiliated Hospitals?",
+    titleZh: "1 所医学院挂牌 52 家医院，步子迈大了，会不会扯到蛋？",
+    link: "https://mp.weixin.qq.com/s/csJXTNFU-Q2ocBJ4mpWDRA",
+    reading: ">203k",
+    repost: "2,944",
+    likes: "321",
+  },
+];
 ---
 
 <html lang="en">
@@ -10,9 +404,10 @@ import Footer from "../components/Footer.astro";
     <title>Publications | Tianzhichao (Tim) Hou</title>
     <meta
       name="description"
-      content="Publications, abstracts, conference presentations, and science communication by Tianzhichao Hou."
+      content="Publications and presentations by Tianzhichao Hou in genetic epidemiology, Mendelian randomization, polygenic risk scores, multi-omics, diabetes, cardiometabolic disease, cancer epidemiology, and longevity."
     />
-  </head>
+<link rel="icon" type="image/png" href="/favicon.png" />
+</head>
 
   <body>
     <Header />
@@ -20,54 +415,90 @@ import Footer from "../components/Footer.astro";
     <main class="pub-page">
       <section class="pub-hero">
         <p class="eyebrow">Publications</p>
-        <h1>Research, presentations, and science communication.</h1>
+        <h1>Research publications</h1>
         <p class="lead">
-          Selected peer-reviewed publications, conference abstracts, presentations,
-          and public-facing scientific writing.
+          Genetic epidemiology · Polygenic risk scores · Multi-omics · Diabetes and cardiometabolic disease ·
+           Cancer epidemiology · Human longevity
         </p>
       </section>
 
       <section class="pub-section">
         <h2>Peer-Reviewed Publications</h2>
 
-        <article class="pub-item">
-          <p class="journal">Nature Communications</p>
-          <h3>Multi-omics and genetic discovery in human disease</h3>
-          <p>Selected representative publication. Add authors, year, DOI, and link here.</p>
-        </article>
-
-        <article class="pub-item">
-          <p class="journal">Diabetes Care</p>
-          <h3>Genetic epidemiology of metabolic and cardiometabolic outcomes</h3>
-          <p>Selected representative publication. Add authors, year, DOI, and link here.</p>
-        </article>
-
-        <article class="pub-item">
-          <p class="journal">Lancet Regional Health</p>
-          <h3>Population-level research in clinical and translational medicine</h3>
-          <p>Selected representative publication. Add authors, year, DOI, and link here.</p>
-        </article>
+        <div class="pub-list">
+          {publications.map((pub) => (
+            <article class="pub-item">
+              <div class="pub-year">{pub.year}</div>
+              <div class="pub-content">
+                <h3>
+                  <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                    {pub.title}
+                  </a>
+                </h3>
+                <p class="authors">{pub.authors}</p>
+                <p class="journal">
+                  {pub.venue}{pub.details ? ` · ${pub.details}` : ""}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section class="pub-section">
-        <h2>Abstracts & Conference Presentations</h2>
+<section class="pub-section">
+  <h2>Presentations & Abstracts</h2>
 
-        <article class="pub-item">
-          <p class="journal">AACR / ASCO / AAP / Other Conferences</p>
-          <h3>Conference abstracts and scientific presentations</h3>
-          <p>Add abstract title, conference name, year, and presentation type here.</p>
-        </article>
-      </section>
+  <div class="pub-list">
+    {presentations.map((pub) => (
+      <article class="pub-item">
+        <div class="pub-year">{pub.year}</div>
+        <div class="pub-content">
+          <h3>
+            {pub.link ? (
+              <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                {pub.title}
+              </a>
+            ) : (
+              <span>{pub.title}</span>
+            )}
+          </h3>
+          <p class="authors">{pub.authors}</p>
+          <p class="journal">
+            {pub.venue}{pub.details ? ` · ${pub.details}` : ""}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+<section class="pub-section">
+  <h2>Science Communication & Public Writing</h2>
 
-      <section class="pub-section">
-        <h2>Science Communication / Popular Science</h2>
+  <div class="pub-list">
+    {scienceWriting.map((item) => (
+      <article class="pub-item">
+        <div class="pub-year">{item.year}</div>
+        <div class="pub-content">
+          <h3>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              {item.titleEn}
+            </a>
+          </h3>
 
-        <article class="pub-item">
-          <p class="journal">Public-facing writing</p>
-          <h3>Science communication and educational writing</h3>
-          <p>Add popular science articles, educational essays, media pieces, or public writing here.</p>
-        </article>
-      </section>
+          <p class="science-title-zh">
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              {item.titleZh}
+            </a>
+          </p>
+
+          <p class="authors">
+            Popular science article · Reading: {item.reading} · Reposts: {item.repost} · Likes: {item.likes}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
     </main>
 
     <Footer />
@@ -85,57 +516,65 @@ import Footer from "../components/Footer.astro";
   }
 
   .pub-page {
-    padding: 6rem 6vw;
+    padding: 5.5rem 6vw;
   }
 
   .pub-hero {
-    max-width: 1050px;
-    margin-bottom: 4rem;
+    max-width: 980px;
+    margin-bottom: 3rem;
   }
 
   .eyebrow {
-    margin: 0 0 1rem;
+    margin: 0 0 0.9rem;
     color: #0071e3;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
-.pub-hero h1 {
-  margin: 0;
-  font-size: clamp(2.6rem, 5.5vw, 5.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.07em;
-  font-weight: 800;
-}
-
-  .lead {
-    max-width: 760px;
-    margin-top: 1.6rem;
-    color: #6b7280;
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    line-height: 1.55;
+  .pub-hero h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 4.2vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+    font-weight: 800;
   }
 
+.lead {
+  max-width: 760px;
+  margin-top: 1.1rem;
+  color: #6b7280;
+  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  line-height: 1.55;
+}
+
   .pub-section {
-    max-width: 1000px;
+    max-width: 1050px;
     margin-bottom: 2rem;
-    padding: clamp(2rem, 5vw, 3.5rem);
-    border-radius: 36px;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    border-radius: 32px;
     background: white;
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.06);
   }
 
-  .pub-section h2 {
-    margin: 0 0 1.5rem;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+.pub-section h2 {
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.3rem, 2.1vw, 1.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+  .pub-list {
+    display: grid;
+    gap: 0;
   }
 
   .pub-item {
-    padding: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.2rem;
+    padding: 1.25rem 0;
     border-top: 1px solid rgba(17, 24, 39, 0.12);
   }
 
@@ -143,22 +582,73 @@ import Footer from "../components/Footer.astro";
     border-top: none;
   }
 
-  .journal {
-    margin: 0 0 0.5rem;
-    color: #a51c30;
+  .pub-year {
+    color: #6b7280;
+    font-size: 0.95rem;
     font-weight: 800;
+    letter-spacing: -0.02em;
   }
 
-  .pub-item h3 {
-    margin: 0 0 0.6rem;
-    font-size: 1.35rem;
-    letter-spacing: -0.03em;
+.pub-content h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(0.92rem, 1.08vw, 1.05rem);
+  line-height: 1.42;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+.pub-content h3 span {
+  color: #111827;
+}
+  .pub-content h3 a {
+    color: #111827;
+    text-decoration: none;
   }
 
-  .pub-item p {
-    margin: 0;
-    color: #4b5563;
-    font-size: 1.05rem;
-    line-height: 1.65;
+  .pub-content h3 a:hover {
+    color: #0071e3;
+  }
+.science-title-zh {
+  margin: -0.15rem 0 0.25rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  font-weight: 650;
+}
+
+.science-title-zh a {
+  color: #374151;
+  text-decoration: none;
+}
+
+.science-title-zh a:hover {
+  color: #0071e3;
+}
+.authors {
+  margin: 0 0 0.2rem;
+  color: #4b5563;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.journal {
+  margin: 0;
+  color: #a51c30;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+  @media (max-width: 700px) {
+    .pub-page {
+      padding: 4.8rem 5vw;
+    }
+
+    .pub-item {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .pub-year {
+      font-size: 0.86rem;
+    }
   }
 </style>
