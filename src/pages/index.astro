@@ -1138,41 +1138,70 @@ window.addEventListener("keydown", (event) => {
         color: white;
       }
 
-      @media (max-width: 900px) {
-        .section {
-          padding: 6rem 1.3rem;
-        }
-.clinical-panel {
-  grid-template-columns: 1fr;
+ @media (max-width: 900px) {
+  .section {
+    padding: 6rem 1.3rem;
+  }
+
+  .clinical-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .clinical-image-wrap img {
+    min-height: 220px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    align-items: start;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .portrait-ring {
+    width: min(260px, 68vw);
+  }
+
+  .affiliation-logos {
+    gap: 1.2rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  .affiliation-logos img {
+    max-height: 42px;
+    max-width: 180px;
+  }
+
+  .affiliation-logos img.bmc-logo {
+    max-height: 52px;
+    max-width: 210px;
+  }
+
+  .publication-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-wrap {
+    padding: 6rem 1.3rem;
+  }
 }
 
-.clinical-image-wrap img {
-  min-height: 220px;
+@media (max-width: 700px) {
+  .affiliation-logos {
+    gap: 1rem;
+  }
+
+  .portrait-ring {
+    width: min(230px, 62vw);
+  }
 }
-.hero-section {
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding-top: 3rem;
-}
-
-        .hero-visual {
-          justify-content: flex-start;
-        }
-
-        .publication-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .sticky-wrap {
-          padding: 6rem 1.3rem;
-        }
-      }
-
-      @media (max-width: 700px) {
-        .horizontal-section {
-          min-height: auto;
-          padding: 6rem 1.3rem;
-        }
 
         .sticky-wrap {
           height: auto;
