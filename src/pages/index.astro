@@ -304,8 +304,11 @@ import Footer from "../components/Footer.astro";
 <div class="clinical-panel reveal">
   <div class="clinical-text">
     <p class="eyebrow">Clinical Training</p>
-    <h2>Boston Combined Residency Program</h2>
-    <p>
+<h2>
+  <a class="clinical-title-link" href="https://bcrp.childrenshospital.org/" target="_blank" rel="noopener noreferrer">
+    Boston Combined Residency Program
+  </a>
+</h2>    <p>
       I am a PGY-1 pediatric resident, rotating at both
       Boston Children’s Hospital and Boston Medical Center.
     </p>
@@ -332,7 +335,9 @@ import Footer from "../components/Footer.astro";
     <img class="training-modal-image" src="/training/bch.jpg" alt="Boston Children’s Hospital" />
     <p class="journal">Clinical Training</p>
     <h3>Boston Children’s Hospital</h3>
-    <p>Pediatric residency training through the Boston Combined Residency Program.</p>
+    <p>I took this photo during my first trip to the U.S. in 2020, just as a 
+      visitor in front of Boston Children’s Hospital. Little did I know that a few
+      years later, I would come back not just for a photo, but to start my career here.</p>
   </div>
 </div>
 
@@ -342,27 +347,54 @@ import Footer from "../components/Footer.astro";
     <img class="training-modal-image" src="/training/bmc.jpg" alt="Boston Medical Center" />
     <p class="journal">Clinical Training</p>
     <h3>Boston Medical Center</h3>
-    <p>Pediatric residency training in a diverse urban academic medical center.</p>
+    <p>As a BCRP resident, we train across both Boston Children’s Hospital
+      and Boston Medical Center (BMC). BMC is the largest public hospital and
+      an academic center in Boston, where our training is connected to community care
+       and the lives of families across the city. </p>
+     
   </div>
 </div>
 
 <div class="research-modal" id="modal-sickkids">
   <div class="modal-panel training-modal-panel">
     <button class="modal-close" data-close-modal>&times;</button>
-    <img class="training-modal-image" src="/training/sickkids.jpg" alt="SickKids Toronto" />
+
+    <img
+      class="training-modal-image training-modal-image-contain"
+      src="/training/sickkids.jpg"
+      alt="SickKids / Toronto"
+    />
+
     <p class="journal">Clinical Experience</p>
     <h3>SickKids / Toronto</h3>
-    <p>Clinical and academic experience in pediatrics and genetics in Toronto.</p>
+    <p>
+      I rotated for two months at SickKids (Genetics Department) in 2024, which actually became the most important step in my clinical journey:
+      it lightened my interest in pediatrics and medical genetics, and finally changed my path from adults to kids.
+    </p>
+    <p>
+      Surprisingly, I also met my fiancee there.  :)
+    </p>
   </div>
 </div>
 
 <div class="research-modal" id="modal-bwh">
   <div class="modal-panel training-modal-panel">
     <button class="modal-close" data-close-modal>&times;</button>
-    <img class="training-modal-image" src="/training/bwh.jpg" alt="Brigham and Women’s Hospital" />
+
+    <img
+      class="training-modal-image training-modal-image-contain"
+      src="/training/bwh.jpg"
+      alt="Brigham and Women’s Hospital"
+    />
+
     <p class="journal">Clinical Experience</p>
     <h3>Brigham and Women’s Hospital</h3>
-    <p>Clinical exposure and academic training in a Harvard-affiliated teaching hospital.</p>
+    <p>
+      During my Nephrology rotation at BWH, I met a volunteer harpist near the cafeteria who was playing music for patients and staff. Her
+      kindness and music made the hospital feel warm. We became friends,
+      and she gave me one of her CDs - a small but unforgettable memory from my
+      time at BWH.
+    </p>
   </div>
 </div>
 
@@ -372,7 +404,8 @@ import Footer from "../components/Footer.astro";
     <img class="training-modal-image" src="/training/columbia.jpg" alt="Columbia University Irving Medical Center" />
     <p class="journal">Clinical Experience</p>
     <h3>Columbia University Irving Medical Center</h3>
-    <p>Clinical and academic experience at Columbia University Irving Medical Center.</p>
+    <p>With a confident smile, I stood at Endocrinology, New York-Presbyterian Hospital. 
+    This is my first time being abroad and signals the beginning of my international medical journey, exploring a foreign system.</p>
   </div>
 </div>
 
@@ -382,7 +415,9 @@ import Footer from "../components/Footer.astro";
     <img class="training-modal-image" src="/training/perth.jpg" alt="Perth Children’s Hospital" />
     <p class="journal">Clinical Experience</p>
     <h3>Perth Children’s Hospital</h3>
-    <p>International pediatric clinical experience in Western Australia.</p>
+    <p> When I rotated at the University of Western Australia, I was astonished 
+  by the thick medical record folders: some nearly 10 cm wide, holding 12 years of children's medical history. 
+  Pediatrics is not just one visit, but a long story with the child and family.</p>
   </div>
 </div>
 
@@ -392,7 +427,10 @@ import Footer from "../components/Footer.astro";
     <img class="training-modal-image" src="/training/ucsd.jpg" alt="UC San Diego Health" />
     <p class="journal">Clinical Experience</p>
     <h3>UC San Diego Health</h3>
-    <p>Clinical training experience in academic medicine at UC San Diego Health.</p>
+    <p> During my cardiology rotation at UCSD, I saw LVAD, tilt-table, 
+   and many other fascinating procedures.  
+   My fiancee and I also spent our "honeymoon" there. I truly love San Diego!
+   </p>
   </div>
 </div>
 
@@ -658,14 +696,16 @@ window.addEventListener("keydown", (event) => {
         color: var(--accent);
       }
 
-      .hero-section {
-        display: grid;
-        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-        gap: 4rem;
-        background:
-          radial-gradient(circle at 75% 40%, rgba(0, 113, 227, 0.16), transparent 28%),
-          linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
-      }
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background:
+    radial-gradient(circle at 75% 40%, rgba(0, 113, 227, 0.16), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+}
 
       .hero-content {
         max-width: 980px;
@@ -992,6 +1032,14 @@ window.addEventListener("keydown", (event) => {
   letter-spacing: -0.055em;
   font-weight: 800;
 }
+.clinical-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.clinical-title-link:hover {
+  color: var(--accent);
+}
 
 .contact-content h2 {
   margin: 0;
@@ -1044,6 +1092,12 @@ window.addEventListener("keydown", (event) => {
   margin-bottom: 1.5rem;
   display: block;
 }
+.training-modal-image-contain {
+  max-height: 68vh;
+  object-fit: contain;
+  background: #f5f5f7;
+}
+
 .training-pill:hover {
   transform: translateY(-2px);
   background: #eef6ff;
@@ -1095,10 +1149,11 @@ window.addEventListener("keydown", (event) => {
 .clinical-image-wrap img {
   min-height: 220px;
 }
-        .hero-section {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
+.hero-section {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-top: 3rem;
+}
 
         .hero-visual {
           justify-content: flex-start;
